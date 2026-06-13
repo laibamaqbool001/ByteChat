@@ -1,0 +1,34 @@
+# ── Dependencies ──────────────────────────────────────────────────
+node_modules/
+
+# ── Environment variables (NEVER commit these) ────────────────────
+.env
+.env.local
+.env.production
+.env.staging
+
+# ── Forensic report files (generated at runtime) ──────────────────
+reports/
+*.pdf
+*.json.report
+
+# ── Logs ──────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+
+# ── OS files ──────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor files ──────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Build / temp ──────────────────────────────────────────────────
+dist/
+build/
+tmp/ 
