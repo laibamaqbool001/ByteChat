@@ -1,0 +1,165 @@
+{
+  "reportId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "generatedAt": "2026-01-15T10:30:00.000Z",
+  "generatedBy": "000000000000000000000001",
+  "dateRange": {
+    "start": "2026-01-01",
+    "end": "2026-12-31"
+  },
+  "subjects": [
+    "user_a",
+    "user_b"
+  ],
+  "summary": {
+    "totalMessages": 3,
+    "tamperedMessages": 1,
+    "deletedMessages": 1,
+    "editedMessages": 1,
+    "imageMessages": 1,
+    "integrityRate": "66.7%"
+  },
+  "messages": [
+    {
+      "id": "000000000000000000000010",
+      "sender": "user_a",
+      "receiver": "user_b",
+      "content": "Hello, this is a sample text message.",
+      "sentAt": "2026-01-15T09:00:00.000Z",
+      "readAt": "2026-01-15T09:01:00.000Z",
+      "messageType": "text",
+      "isDeleted": false,
+      "editCount": 0,
+      "imageEditCount": 0,
+      "integrity": {
+        "intact": true,
+        "gcmAuthenticationPassed": true,
+        "hmacHashIntact": true,
+        "storedHash": "<sha256-hash-of-plaintext>",
+        "encryptionAlgorithm": "AES-256-GCM",
+        "keyVersion": 1
+      }
+    },
+    {
+      "id": "000000000000000000000011",
+      "sender": "user_b",
+      "receiver": "user_a",
+      "content": "<cloudinary-image-url>",
+      "sentAt": "2026-01-15T09:05:00.000Z",
+      "readAt": "2026-01-15T09:06:00.000Z",
+      "messageType": "image",
+      "isDeleted": false,
+      "editCount": 0,
+      "imageEditCount": 1,
+      "integrity": {
+        "intact": true,
+        "gcmAuthenticationPassed": true,
+        "hmacHashIntact": true,
+        "storedHash": "<sha256-hash-of-plaintext>",
+        "encryptionAlgorithm": "AES-256-GCM",
+        "keyVersion": 1
+      },
+      "imageForensics": {
+        "serverHash": "<sha256-of-image-bytes>",
+        "uploadIntegrityMatch": true,
+        "uploadedAt": "2026-01-15T09:05:10.000Z",
+        "editHistory": [
+          {
+            "editedAt": "2026-01-15T09:05:10.000Z",
+            "previousServerHash": "<sha256-of-original-image>",
+            "newServerHash": "<sha256-of-edited-image>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "000000000000000000000012",
+      "sender": "user_a",
+      "receiver": "user_b",
+      "content": "This message was deleted.",
+      "sentAt": "2026-01-15T09:10:00.000Z",
+      "messageType": "text",
+      "isDeleted": true,
+      "editCount": 0,
+      "imageEditCount": 0,
+      "integrity": {
+        "intact": false,
+        "gcmAuthenticationPassed": true,
+        "hmacHashIntact": false,
+        "storedHash": "<sha256-hash-of-plaintext>",
+        "encryptionAlgorithm": "AES-256-GCM",
+        "keyVersion": 1
+      }
+    }
+  ],
+  "auditLogs": [
+    {
+      "action": "USER_SIGNUP",
+      "actor": {
+        "userId": "000000000000000000000001",
+        "username": "user_a",
+        "ip": "0.0.0.0",
+        "device": "desktop"
+      },
+      "targetType": "User",
+      "targetId": "000000000000000000000001",
+      "timestamp": "2026-01-15T08:00:00.000Z",
+      "entryHash": "<hmac-sha256-of-log-entry>"
+    },
+    {
+      "action": "USER_LOGIN",
+      "actor": {
+        "userId": "000000000000000000000001",
+        "username": "user_a",
+        "ip": "0.0.0.0",
+        "device": "desktop"
+      },
+      "targetType": "User",
+      "targetId": "000000000000000000000001",
+      "timestamp": "2026-01-15T08:55:00.000Z",
+      "entryHash": "<hmac-sha256-of-log-entry>"
+    },
+    {
+      "action": "MESSAGE_SENT",
+      "actor": {
+        "userId": "000000000000000000000001",
+        "username": "user_a",
+        "ip": "0.0.0.0",
+        "device": "desktop"
+      },
+      "targetType": "Message",
+      "targetId": "000000000000000000000010",
+      "timestamp": "2026-01-15T09:00:00.000Z",
+      "entryHash": "<hmac-sha256-of-log-entry>"
+    },
+    {
+      "action": "MESSAGE_EDITED",
+      "actor": {
+        "userId": "000000000000000000000002",
+        "username": "user_b",
+        "ip": "0.0.0.0",
+        "device": "mobile"
+      },
+      "targetType": "Message",
+      "targetId": "000000000000000000000011",
+      "timestamp": "2026-01-15T09:07:00.000Z",
+      "entryHash": "<hmac-sha256-of-log-entry>"
+    },
+    {
+      "action": "USER_LOGOUT",
+      "actor": {
+        "userId": "000000000000000000000001",
+        "username": "user_a",
+        "ip": "0.0.0.0",
+        "device": "desktop"
+      },
+      "targetType": "User",
+      "targetId": "000000000000000000000001",
+      "timestamp": "2026-01-15T10:00:00.000Z",
+      "entryHash": "<hmac-sha256-of-log-entry>"
+    }
+  ],
+  "integrity": {
+    "reportHash": "<sha256-of-entire-report>",
+    "digitalSignature": "<hmac-signature>"
+  }
+}
